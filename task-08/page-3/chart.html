@@ -1,0 +1,56 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript" src="/home/manikandan/Desktop/tasks/task-8/page-3/data.js"></script>
+<style> 
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    max-width: 800px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+<title> Graph </title>
+<body>
+
+
+<canvas id="myChart"></canvas>
+
+<script>
+
+
+var Values = getRandomJson()
+
+var xValues = Values.map(function(e) {
+   return e.pizza;
+});
+
+var yValues = Values.map(function(e) {
+   return e.sold;
+});
+   
+function showchart(){
+	new Chart("myChart", {
+	  type: "line",
+	  data: {
+	    labels: xValues,
+	    datasets: [{
+	      fill: false,
+	      lineTension: 0,
+	      backgroundColor: "rgba(255, 0, 0, 0.8)",
+	      borderColor: "rgba(255, 0, 0, 0.2)",
+	      data: yValues
+	    }]
+	  },
+	  options: {
+	  }
+	});};
+showchart();
+</script>
+
+</body>
+</html>
